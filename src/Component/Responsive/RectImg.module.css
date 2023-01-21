@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+  width: 50%;
+  /* The size you want */
+}
+
+.container:after {
+  content: "";
+  display: block;
+  padding-bottom: 75%;
+  /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+
+.container img {
+  position: absolute;
+  /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Make the picture taking the size of it's parent */
+  width: 100%;
+  /* This if for the object-fit */
+  height: 100%;
+  /* This if for the object-fit */
+  object-fit: cover;
+  /* Equivalent of the background-size: cover; of a background-image */
+  /* object-position: 0 30px; */
+  padding: 3%;
+}
+
+.container .imageOverlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(120, 120, 120, 0.1);
+  margin: 3%;
+}
+
+.container .text {
+  z-index: 2;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 3%;
+
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  color: #fff;
+  font-size: 1.4vw;
+}
+
+.container .text:hover {
+  cursor: pointer;
+  background-color: rgba(120, 120, 120, 0.1);
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container .text {
+    font-size: 3.8vw;
+  }
+}

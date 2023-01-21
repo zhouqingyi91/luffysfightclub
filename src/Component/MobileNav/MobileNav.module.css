@@ -1,0 +1,30 @@
+#mobileNav {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  #mobileNav {
+    display: block;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  #mobileNav .header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+  }
+
+
+  #mobileNav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.13rem;
+    line-height: 2.5em;
+    /* display: block; */
+    color: #ccc;
+    text-decoration: none;
+  }
+}

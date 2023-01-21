@@ -1,0 +1,32 @@
+.overlayControls {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.leftControl {
+  left: 0;
+  width: 40%;
+  cursor: w-resize;
+}
+
+.centerControl {
+  left: 40%;
+  width: 20%;
+  cursor: n-resize;
+}
+
+.rightControl {
+  left: 60%;
+  width: 40%;
+  cursor: e-resize;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .overlayControls {
+    display: none;
+  }
+}

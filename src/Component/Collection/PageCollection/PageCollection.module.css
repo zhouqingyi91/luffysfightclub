@@ -1,0 +1,7 @@
+.pageCollection {
+  display: flex;
+  /* border: 1px white solid; */
+  /* padding: 1%; */
+  flex-wrap: wrap;
+  width: 100%;
+}

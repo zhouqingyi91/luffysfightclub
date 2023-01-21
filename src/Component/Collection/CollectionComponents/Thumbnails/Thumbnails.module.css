@@ -1,0 +1,6 @@
+#thumbnails {
+  position: relative;
+  /* border: 1px white solid; */
+  box-sizing: content-box;
+  padding-bottom: 80px;
+}

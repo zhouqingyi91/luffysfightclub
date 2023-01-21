@@ -1,0 +1,24 @@
+#galleryCollection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#galleryCollection #galleryWrapper {
+  position: relative;
+  margin: 80px;
+  margin-left: 330px;
+  height: calc(100% - 160px);
+}
+
+@media only screen and (max-width: 800px) {
+  #galleryCollection {
+    position: static;
+  }
+
+  #galleryCollection #galleryWrapper {
+    margin: 0;
+  }
+}

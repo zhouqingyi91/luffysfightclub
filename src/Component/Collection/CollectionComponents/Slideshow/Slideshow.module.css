@@ -1,0 +1,10 @@
+#slideshow {
+  height: 100%;
+  position: relative;
+}
+
+/* @media only screen and (max-width: 800px) {
+  #slideshow {
+    display: block !important;
+  }
+} */
