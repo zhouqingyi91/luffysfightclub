@@ -1,1 +1,1 @@
-A responsive image gallery website showcasing the photographer's work test
+A responsive image gallery website showcasing the photographer's work
