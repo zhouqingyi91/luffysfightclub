@@ -1,4 +1,25 @@
 {
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-luffysfightclub-test-213944-authRole",
+      "UnauthRoleArn": "arn:aws:iam::688617565853:role/amplify-luffysfightclub-test-213944-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::688617565853:role/amplify-luffysfightclub-test-213944-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-luffysfightclub-test-213944-deployment",
+      "UnauthRoleName": "amplify-luffysfightclub-test-213944-unauthRole",
+      "StackName": "amplify-luffysfightclub-test-213944",
+      "StackId": "arn:aws:cloudformation:us-west-2:688617565853:stack/amplify-luffysfightclub-test-213944/1c283700-a342-11ed-81a9-02c83a305675",
+      "AmplifyAppId": "d1qumfaodhy40p"
+    },
+    "categories": {
+      "function": {
+        "getS3AlbumPhotosFunction": {
+          "deploymentBucketName": "amplify-luffysfightclub-test-213944-deployment",
+          "s3Key": "amplify-builds/getS3AlbumPhotosFunction-7046636c2f646c666664-build.zip"
+        }
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplifybaedd578ed684-staging-51252-authRole",
