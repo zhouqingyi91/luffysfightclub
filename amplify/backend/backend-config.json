@@ -1,0 +1,44 @@
+{
+  "api": {
+    "getS3AlbumPhotosApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getS3AlbumPhotosFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "getS3AlbumPhotosFunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_getS3AlbumPhotosFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getS3AlbumPhotosFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_getS3AlbumPhotosFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getS3AlbumPhotosFunction"
+        }
+      ]
+    }
+  }
+}

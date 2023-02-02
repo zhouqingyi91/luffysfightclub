@@ -7,6 +7,10 @@ import './css/reset.css';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from './Store';
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+
+Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
