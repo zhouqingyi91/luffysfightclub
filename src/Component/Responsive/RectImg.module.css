@@ -78,4 +78,9 @@
   .container .text {
     font-size: 3.8vw;
   }
+
+  .container .text:hover {
+    cursor: default;
+    background-color: rgba(120, 120, 120, 0);
+  }
 }

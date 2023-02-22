@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Slide from './Slide/Slide';
 import css from './Slideshow.module.css';
+import { bucketPathPrefix } from '../../../../Constants/S3/S3BucketConst';
 
 const Slideshow = () => {
   // states
@@ -10,8 +11,8 @@ const Slideshow = () => {
 
   return (
     <div id={css.slideshow} >
-      {galleryImgData && galleryImgData.map((imgUrl, idx) => {
-        return <Slide imgUrl={imgUrl} key={idx} activeSlide={slideIndex === idx} />
+      {galleryImgData?.map(({ imgName }, idx) => {
+        return <Slide imgUrl={bucketPathPrefix + imgName} key={idx} activeSlide={slideIndex === idx} />
       })}
     </div>
   );

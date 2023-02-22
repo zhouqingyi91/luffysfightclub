@@ -2,16 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import RectImg from '../../Responsive/RectImg';
 import css from './PageCollection.module.css';
+import { bucketPathPrefix } from '../../../Constants/S3/S3BucketConst';
 
-
-const PageCollection = (props) => {
-
+const PageCollection = () => {
   // states
   const pageImgData = useSelector(state => state.pageImgData);
 
   return (
     <div className={css.pageCollection}>
-      {pageImgData.map(({ imgUrl, path }, idx) => <RectImg path={path} imageOverlay={true} imgUrl={imgUrl} key={idx} />)}
+      {pageImgData.map(({ imgName, path }, idx) => <RectImg path={path} imageOverlay={path} imgUrl={bucketPathPrefix + imgName} key={idx} />)}
     </div>
   );
 };

@@ -1,18 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slideshow from '../CollectionComponents/Slideshow/Slideshow';
 import OverlayControls from '../CollectionComponents/OverlayControls/OverlayControls';
 import Thumbnails from '../CollectionComponents/Thumbnails/Thumbnails';
 import css from './GalleryCollection.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import useElementSize from '../../../Hooks/useElementSize';
-import { setSlideshowLastStatus } from '../../../Store/slideshowLastStatusSlice';
 import { displaySlideshow } from '../../../Store/slideshowSlice';
 
 const GalleryCollection = () => {
-
   const dispatch = useDispatch();
   const slideshow = useSelector(state => state.slideshow);
-  const slideshowLastStatus = useSelector(state => state.slideshowLastStatus);
+  const [slideshowLastStatus, setSlideshowLastStatus] = useState(true);
 
   const galleryCollectionEle = useRef();
   const galleryCollectionSize = useElementSize(galleryCollectionEle);
@@ -20,14 +18,14 @@ const GalleryCollection = () => {
   useEffect(() => {
     if (galleryCollectionSize !== null) {
       if (galleryCollectionSize.width <= 800 && !slideshow) {
-        dispatch(setSlideshowLastStatus(slideshow));
+        setSlideshowLastStatus(false);
         dispatch(displaySlideshow(true));
       } else if (galleryCollectionSize.width > 800 && !slideshowLastStatus) {
-        dispatch(displaySlideshow(slideshowLastStatus));
-        dispatch(setSlideshowLastStatus(true));
+        dispatch(displaySlideshow(false));
+        setSlideshowLastStatus(true);
       }
     }
-  });
+  }, [galleryCollectionSize]);
 
   return (
     <div ref={galleryCollectionEle} id={css.galleryCollection}>

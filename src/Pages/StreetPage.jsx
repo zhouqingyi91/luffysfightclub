@@ -1,26 +1,19 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setGalleryImgData } from '../Store/galleryImgDataSlice';
 import GalleryCollection from '../Component/Collection/GalleryCollection/GalleryCollection';
-import { fetchImgData } from '../Utils/s3Utils';
-import { bucketPathPrefix, streetAlbum } from '../Constants/S3/S3BucketConst'
+import { streetAlbum } from '../Constants/S3/S3BucketConst'
+import useSetGalleryImgData from '../Hooks/useSetGalleryImgData';
+import { useEffect } from 'react';
 
 let IMG_DATA = null;
 
 const StreetPage = () => {
-  const dispatch = useDispatch();
+  const setGalleryImgData = useSetGalleryImgData();
+
   useEffect(() => {
-    if (IMG_DATA === null) {
-      fetchImgData(streetAlbum)
-        .then(res => res.map(({ path }) => bucketPathPrefix + path))
-        .then(imgData => {
-          IMG_DATA = imgData;
-          dispatch(setGalleryImgData(IMG_DATA));
-        })
-    } else {
-      dispatch(setGalleryImgData(IMG_DATA));
-    }
+    (async () => IMG_DATA = await setGalleryImgData(IMG_DATA, streetAlbum))();
+
+    return () => setGalleryImgData([]);
   }, [])
+
   return (
     <GalleryCollection />
   );

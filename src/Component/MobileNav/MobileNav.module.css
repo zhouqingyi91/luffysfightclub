@@ -16,15 +16,7 @@
     padding-bottom: 15px;
   }
 
-
-  #mobileNav a {
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.13rem;
-    line-height: 2.5em;
-    /* display: block; */
-    color: #ccc;
-    text-decoration: none;
+  .header a {
+    font-size: 1.25rem;
   }
 }

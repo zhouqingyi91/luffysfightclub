@@ -1,26 +1,19 @@
-import React, { useEffect } from 'react';
 import GalleryCollection from '../Component/Collection/GalleryCollection/GalleryCollection';
-import { useDispatch } from 'react-redux';
-import { setGalleryImgData } from '../Store/galleryImgDataSlice';
-import { bucketPathPrefix, portraitAlbum } from '../Constants/S3/S3BucketConst';
-import { fetchImgData } from '../Utils/s3Utils';
+import { portraitAlbum } from '../Constants/S3/S3BucketConst';
+import useSetGalleryImgData from '../Hooks/useSetGalleryImgData';
+import { useEffect } from 'react';
 
 let IMG_DATA = null;
 
 const PortraitPage = () => {
-  const dispatch = useDispatch();
+  const setGalleryImgData = useSetGalleryImgData();
+
   useEffect(() => {
-    if (IMG_DATA === null) {
-      fetchImgData(portraitAlbum)
-        .then(res => res.map(({ path }) => bucketPathPrefix + path))
-        .then(imgData => {
-          IMG_DATA = imgData;
-          dispatch(setGalleryImgData(IMG_DATA));
-        })
-    } else {
-      dispatch(setGalleryImgData(IMG_DATA));
-    }
+    (async () => IMG_DATA = await setGalleryImgData(IMG_DATA, portraitAlbum))();
+
+    return () => setGalleryImgData([]);
   }, [])
+
   return (
     <GalleryCollection />
   );

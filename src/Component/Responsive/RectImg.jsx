@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import css from './RectImg.module.css';
 
 
-const RectImg = (props) => {
+const RectImg = ({ imgUrl, path, imageOverlay }) => {
   const navigate = useNavigate();
-  const imageOverlayOnClickHandler = () => navigate(props.path);
+  const imageOverlayOnClickHandler = () => navigate(path);
 
   return (
     <div className={css.container}>
-      <img src={props.imgUrl} alt='luffysfightclub' />
-      {props.imageOverlay && <div className={css.imageOverlay}></div>}
-      {props.path &&
+      <img src={imgUrl} alt='luffysfightclub' />
+      {imageOverlay && <div className={css.imageOverlay}></div>}
+      {path &&
         <div onClick={imageOverlayOnClickHandler} className={css.text}>
-          <p>{props.path}</p>
+          <p>{path}</p>
         </div>}
     </div>
   );

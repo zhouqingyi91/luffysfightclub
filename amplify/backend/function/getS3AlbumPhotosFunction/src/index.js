@@ -16,7 +16,7 @@ exports.handler = async (event) => {
 
     try {
         let data = await s3Client.send(new ListObjectsV2Command(bucketParams));
-        data = data.Contents.slice(1).reverse().map(({ Key }) => ({ path: Key }));
+        data = data.Contents.slice(1).reverse().map(({ Key }) => ({ imgName: Key }));
         return {
             statusCode: 200,
             //  Uncomment below to enable CORS requests

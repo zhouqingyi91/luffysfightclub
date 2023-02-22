@@ -4,9 +4,9 @@ import useResizeObserver from '@react-hook/resize-observer'
 
 const useElementSize = (target) => {
   const [size, setSize] = useState(null);
-  useLayoutEffect(() => {
-    target.current && setSize(target.current.getBoundingClientRect());
-  }, [target]);
+  // useLayoutEffect(() => {
+  //   target.current && setSize(target.current.getBoundingClientRect());
+  // }, [target]);
 
   // const setRoundedSize = ({ width, height }) => setSize({ width: Math.round(width), height: Math.round(height) });
 
