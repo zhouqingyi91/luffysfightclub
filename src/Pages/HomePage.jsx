@@ -10,8 +10,6 @@ const HomePage = () => {
 
   useEffect(() => {
     (async () => IMG_DATA = await setPageImgData(IMG_DATA, homepageAlbum))();
-
-    return () => setPageImgData([]);
   }, [])
 
   return (

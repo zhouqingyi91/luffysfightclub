@@ -7,12 +7,17 @@
 }
 
 #header a {
-  font-size: .9rem;
+  font-size: 13px;
 }
 
 #header li:first-child a {
-  font-size: 1.1rem;
+  font-size: 16px;
 }
+
+#header a:hover {
+  color: white;
+}
+
 
 @media only screen and (max-width: 800px) {
   #headerWrapper {

@@ -35,10 +35,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: white;
-}
-
 a:visited {
   color: #ccc;
 }
