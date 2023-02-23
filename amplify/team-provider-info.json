@@ -39,7 +39,7 @@
       "function": {
         "getS3AlbumPhotosFunction": {
           "deploymentBucketName": "amplify-amplifybaedd578ed684-staging-51252-deployment",
-          "s3Key": "amplify-builds/getS3AlbumPhotosFunction-7046636c2f646c666664-build.zip"
+          "s3Key": "amplify-builds/getS3AlbumPhotosFunction-4279626759687a797466-build.zip"
         }
       },
       "api": {
