@@ -11,7 +11,7 @@ const GRID_GAP = 10;
 const MIN_IMG_WIDTH = 312;
 
 const Thumbnails = () => {
-  const thumbnailsEle = useRef();
+  const thumbnailsEle = useRef(null);
   const size = useElementSize(thumbnailsEle);
 
   // states

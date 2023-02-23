@@ -12,7 +12,7 @@ const GalleryCollection = () => {
   const slideshow = useSelector(state => state.slideshow);
   const [slideshowLastStatus, setSlideshowLastStatus] = useState(true);
 
-  const galleryCollectionEle = useRef();
+  const galleryCollectionEle = useRef(null);
   const galleryCollectionSize = useElementSize(galleryCollectionEle);
 
   useEffect(() => {
