@@ -29,10 +29,8 @@ const Thumbnails = () => {
     const numOfImgPerRow = Math.floor(totalWidth / MIN_IMG_WIDTH);
     const imgWidth = Math.floor((totalWidth - (numOfImgPerRow - 1) * GRID_GAP) / numOfImgPerRow);
     let rowNumber = 0;
-    if (thumbnailsEle.current.style.height.length === 0) {
-      thumbnailsEle.current.style.height = Math.ceil(galleryImgData.length / numOfImgPerRow) * (GRID_GAP + imgWidth) - GRID_GAP + 'px';
-      return;
-    }
+
+    thumbnailsEle.current.style.height = Math.ceil(galleryImgData.length / numOfImgPerRow) * (GRID_GAP + imgWidth) - GRID_GAP + 'px';
     return galleryImgData.map(({ imgName }, idx) => {
       const top = rowNumber * (imgWidth + GRID_GAP);
       const left = (idx % numOfImgPerRow) * (imgWidth + GRID_GAP);
