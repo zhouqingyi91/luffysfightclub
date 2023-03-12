@@ -96,9 +96,7 @@ const AuthHeaderWrapper = () => {
                     <input value={albumName} onChange={e => setAlbumName(e.target.value)} ref={albumNameRef} type="text" />
                     <FontAwesomeIcon onClick={finishCreateAlbumHandler} className={css.checkIcon} icon={faCheck} />
                   </div>
-                  : <a href="#" onClick={e => createAlbumHandler(e)}>create album
-                    <FontAwesomeIcon icon={faCheck} />
-                  </a>
+                  : <a href="#" onClick={e => createAlbumHandler(e)}>create album</a>
                 }
               </li>
               {albums?.map((album, idx) => {

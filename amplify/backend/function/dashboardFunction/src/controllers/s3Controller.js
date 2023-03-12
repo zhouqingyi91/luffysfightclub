@@ -6,7 +6,6 @@ const {
   DeleteObjectsCommand
 } = require("@aws-sdk/client-s3");
 
-// const albumBucketName = "luffys-s3-bucket-demo";
 const albumBucketName = "luffysfightclub";
 
 const listAlbums = async (req, res) => {
