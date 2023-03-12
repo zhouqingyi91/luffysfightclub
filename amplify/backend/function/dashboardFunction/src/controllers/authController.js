@@ -28,12 +28,12 @@ const handleLogin = async (req, res) => {
         }
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '120s' }
+      { expiresIn: '30m' }
     );
     const refreshToken = jwt.sign(
       { [User.partitionKey.name]: foundUser[User.partitionKey.name][User.partitionKey.type] },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '1d' }
+      { expiresIn: '12h' }
     );
 
     const putParams = {
@@ -77,7 +77,7 @@ const handleRefreshToken = (req, res) => {
           }
         },
         process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: '120s' }
+        { expiresIn: '30m' }
       );
       res.json({ accessToken })
     }

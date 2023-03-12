@@ -28,7 +28,7 @@ const listAlbumPhotos = async (req, res) => {
   const { album } = req.query;
   try {
     let data = await s3Client.send(
-      new ListObjectsV2Command({ Prefix: album, Bucket: albumBucketName })
+      new ListObjectsV2Command({ Prefix: album + "/", Bucket: albumBucketName })
     );
     data = data.Contents.reverse().map(({ Key }) => ({ imgName: Key }));
     data.pop();
