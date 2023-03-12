@@ -59,8 +59,7 @@ const AuthHeaderWrapper = () => {
 
   const finishCreateAlbumHandler = async () => {
     try {
-      const { result } = await API.put(DashboardApi, addAlbumPath, { body: { albumName } })
-      console.log(result);
+      await trackPromise(API.put(DashboardApi, addAlbumPath, { body: { albumName } }))
       dispatch(addAlbum(albumName));
       setAlbumName("");
       setCreateAlbumFlag(false);
@@ -71,11 +70,11 @@ const AuthHeaderWrapper = () => {
 
   const deleteAlbumHandler = async (albumName, index) => {
     try {
-      await API.del(DashboardApi, delAlbumPath, { body: { albumName } })
+      await trackPromise(API.del(DashboardApi, delAlbumPath, { body: { albumName } }))
       dispatch(removeAlbum(index));
       setOpenModal(false);
       dispatch(setAlbumPhotos([]));
-      navigate("/api/dashboard/", { state: { from: location }, replace: true });
+      navigate("/api/dashboard", { state: { from: location }, replace: true });
     } catch (err) {
       console.error(err.message);
     }
@@ -97,7 +96,9 @@ const AuthHeaderWrapper = () => {
                     <input value={albumName} onChange={e => setAlbumName(e.target.value)} ref={albumNameRef} type="text" />
                     <FontAwesomeIcon onClick={finishCreateAlbumHandler} className={css.checkIcon} icon={faCheck} />
                   </div>
-                  : <a href="#" onClick={e => createAlbumHandler(e)}>create album</a>
+                  : <a href="#" onClick={e => createAlbumHandler(e)}>create album
+                    <FontAwesomeIcon icon={faCheck} />
+                  </a>
                 }
               </li>
               {albums?.map((album, idx) => {
