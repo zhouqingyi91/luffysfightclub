@@ -23,6 +23,16 @@ img {
   vertical-align: middle;
 }
 
+button {
+  background-color: #1a1a1a;
+  color: #bfbfbf;
+  border: 1px solid white;
+}
+
+button:hover {
+  color: white
+}
+
 a {
   font-weight: 600;
   text-transform: uppercase;

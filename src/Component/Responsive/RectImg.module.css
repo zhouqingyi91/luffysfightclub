@@ -1,13 +1,13 @@
 .container {
   position: relative;
-  width: 50%;
+  width: var(--containerWidth);
   /* The size you want */
 }
 
 .container:after {
   content: "";
   display: block;
-  padding-bottom: 75%;
+  padding-bottom: var(--ratio);
   /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
 }
 

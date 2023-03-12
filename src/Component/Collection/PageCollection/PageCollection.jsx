@@ -10,7 +10,7 @@ const PageCollection = () => {
 
   return (
     <div className={css.pageCollection}>
-      {pageImgData.map(({ imgName, path }, idx) => <RectImg path={path} imageOverlay={path} imgUrl={bucketPathPrefix + imgName} key={idx} />)}
+      {pageImgData.map(({ imgName, path }, idx) => <RectImg ratio={"75%"} path={path} imageOverlay={path} imgUrl={bucketPathPrefix + imgName} key={idx} />)}
     </div>
   );
 };

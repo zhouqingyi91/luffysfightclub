@@ -4,6 +4,8 @@ import { slideshowReducer } from './slideshowSlice';
 import { slideIndexReducer } from './slideIndexSlice';
 import { mobileNavMenuReducer } from './mobileNavMenuSlice';
 import { pageImgDataReducer } from './pageImgDataSlice';
+import { albumsReducer } from './Authenticated/albumsSlice';
+import { albumPhotosReducer } from './Authenticated/albumPhotosSlice';
 
 
 const store = configureStore({
@@ -12,7 +14,9 @@ const store = configureStore({
     galleryImgData: galleryImgDataReducer,
     pageImgData: pageImgDataReducer,
     slideIndex: slideIndexReducer,
-    mobileNavMenu: mobileNavMenuReducer
+    mobileNavMenu: mobileNavMenuReducer,
+    albums: albumsReducer,
+    albumPhotos: albumPhotosReducer
   }
 });
 

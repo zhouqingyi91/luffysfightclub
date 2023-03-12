@@ -1,0 +1,12 @@
+#unauthorized {
+  text-align: left;
+}
+
+#unauthorized a {
+  padding-left: 0;
+  text-transform: none;
+}
+
+#unauthorized a:hover {
+  color: white;
+}

@@ -1,0 +1,13 @@
+.dashboardImg {
+  display: flex;
+  width: 25%;
+  position: relative;
+}
+
+.del {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* padding: 0;
+  margin: 0; */
+}

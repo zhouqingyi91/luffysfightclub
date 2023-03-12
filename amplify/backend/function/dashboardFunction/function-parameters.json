@@ -1,0 +1,32 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ExternalLayer",
+      "arn": "arn:aws:lambda:us-west-2:688617565853:layer:dashboard-api-dependencies:1"
+    }
+  ],
+  "permissions": {
+    "storage": {
+      "UserTable": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "accessTokenSecret",
+      "environmentVariableName": "ACCESS_TOKEN_SECRET"
+    },
+    {
+      "cloudFormationParameterName": "refreshTokenSecret",
+      "environmentVariableName": "REFRESH_TOKEN_SECRET"
+    },
+    {
+      "cloudFormationParameterName": "identityPoolId",
+      "environmentVariableName": "IDENTITY_POOL_ID"
+    }
+  ]
+}
