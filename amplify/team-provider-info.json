@@ -50,11 +50,23 @@
       "function": {
         "getS3AlbumPhotosFunction": {
           "deploymentBucketName": "amplify-amplifybaedd578ed684-staging-51252-deployment",
-          "s3Key": "amplify-builds/getS3AlbumPhotosFunction-7046636c2f646c666664-build.zip"
-        }
+          "s3Key": "amplify-builds/getS3AlbumPhotosFunction-4279626759687a797466-build.zip"
+        },
+        "dashboardFunction": {
+          "accessTokenSecret": "6429af21c5c22e247eb6a78f2c241e40ee0808ac1cb72598b45cb739e27895edc7f92f0d0bf44e1a32a2c09747ec374f3bad6f2ff559e16590fc5c174bc1d402",
+          "refreshTokenSecret": "b40e1dd2668d9cfe113cf6780a4d0f2e482b98987ccdb1dc74ea708de75a82a50a3d125bdbd6cfa2c81ce83f2fa268d7255c47d541b862421d2716d291cab4fb",
+          "identityPoolId": "us-west-2:6795ae0b-7b11-408e-9f93-7a64195d30d7",
+          "deploymentBucketName": "amplify-amplifybaedd578ed684-staging-51252-deployment",
+          "s3Key": "amplify-builds/dashboardFunction-314e5276424f6769326e-build.zip"
+        },
+        "UserTable": {}
       },
       "api": {
-        "getS3AlbumPhotosApi": {}
+        "getS3AlbumPhotosApi": {},
+        "dashboardApi": {}
+      },
+      "storage": {
+        "UserTable": {}
       }
     }
   }
