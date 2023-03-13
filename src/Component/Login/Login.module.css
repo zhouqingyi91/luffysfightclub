@@ -1,0 +1,26 @@
+.form {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 100px;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form button,
+.form textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: .75rem;
+  border-radius: 1rem;
+  margin: .5rem;
+}
+
+.form label,
+.form button {
+  margin-top: 1rem;
+}
+
+.form button {
+  padding: 0.5rem;
+  font-size: 22px;
+}

@@ -1,5 +1,5 @@
-const bucketName = 'luffysfightclub';
-const region = 'us-west-2';
+export const bucketName = 'luffysfightclub';
+export const region = 'us-west-2';
 
 export const bucketPathPrefix =
   'https://' +

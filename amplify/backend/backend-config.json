@@ -1,5 +1,19 @@
 {
   "api": {
+    "dashboardApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "dashboardFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "getS3AlbumPhotosApi": {
       "dependsOn": [
         {
@@ -16,6 +30,22 @@
     }
   },
   "function": {
+    "dashboardFunction": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "UserTable"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "getS3AlbumPhotosFunction": {
       "build": true,
       "dependsOn": [],
@@ -24,6 +54,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_dashboardFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dashboardFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_dashboardFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dashboardFunction"
+        }
+      ]
+    },
     "AMPLIFY_function_getS3AlbumPhotosFunction_deploymentBucketName": {
       "usedBy": [
         {
@@ -39,6 +85,12 @@
           "resourceName": "getS3AlbumPhotosFunction"
         }
       ]
+    }
+  },
+  "storage": {
+    "UserTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

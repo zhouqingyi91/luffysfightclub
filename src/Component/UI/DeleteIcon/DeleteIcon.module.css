@@ -1,0 +1,10 @@
+#deleteIcon {
+  display: block;
+  /* color: white; */
+  font-size: var(--size);
+}
+
+#deleteIcon:hover {
+  cursor: pointer;
+  color: white;
+}

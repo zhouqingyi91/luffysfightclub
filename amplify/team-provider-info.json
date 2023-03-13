@@ -16,10 +16,18 @@
         "getS3AlbumPhotosFunction": {
           "deploymentBucketName": "amplify-luffysfightclub-test-213944-deployment",
           "s3Key": "amplify-builds/getS3AlbumPhotosFunction-4279626759687a797466-build.zip"
+        },
+        "dashboardFunction": {
+          "deploymentBucketName": "amplify-luffysfightclub-test-213944-deployment",
+          "s3Key": "amplify-builds/dashboardFunction-314e5276424f6769326e-build.zip"
         }
       },
       "api": {
-        "getS3AlbumPhotosApi": {}
+        "getS3AlbumPhotosApi": {},
+        "dashboardApi": {}
+      },
+      "storage": {
+        "UserTable": {}
       }
     }
   },
@@ -40,10 +48,19 @@
         "getS3AlbumPhotosFunction": {
           "deploymentBucketName": "amplify-amplifybaedd578ed684-staging-51252-deployment",
           "s3Key": "amplify-builds/getS3AlbumPhotosFunction-4279626759687a797466-build.zip"
-        }
+        },
+        "dashboardFunction": {
+          "deploymentBucketName": "amplify-amplifybaedd578ed684-staging-51252-deployment",
+          "s3Key": "amplify-builds/dashboardFunction-314e5276424f6769326e-build.zip"
+        },
+        "UserTable": {}
       },
       "api": {
-        "getS3AlbumPhotosApi": {}
+        "getS3AlbumPhotosApi": {},
+        "dashboardApi": {}
+      },
+      "storage": {
+        "UserTable": {}
       }
     }
   }

@@ -1,0 +1,58 @@
+#headerWrapper {
+  position: fixed;
+  top: 250px;
+  left: 80px;
+  width: 200px;
+  z-index: 999;
+}
+
+#header a {
+  font-size: 13px;
+}
+
+#header a:hover {
+  color: white;
+}
+
+/* #header li:first-child a {
+  font-size: 16px;
+} */
+
+#header .icon {
+  vertical-align: middle;
+  font-size: 20px;
+  margin: 3px;
+}
+
+#header .icon:hover {
+  color: white;
+}
+
+#header .albumNameLi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .albumNameLi a {
+  display: inline-block;
+}
+
+#header input[type=text] {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px white solid;
+  /* border-bottom: 1px white solid; */
+  margin-right: 5px;
+}
+
+#header input[type=text]:focus {
+  outline: none;
+}
+
+
+@media only screen and (max-width: 800px) {
+  #headerWrapper {
+    display: none;
+  }
+}

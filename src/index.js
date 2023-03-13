@@ -5,21 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './css/reset.css';
 import './index.css';
-import { Provider } from 'react-redux';
-import store from './Store';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
+import { AuthContextProvider } from './Context/AuthContextProvider'
+import ReduxProvider from './Store/ReduxProvider';
 
 Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>
+    <AuthContextProvider>
+      <ReduxProvider>
+        <Router>
+          <App />
+        </Router>
+      </ReduxProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );
 
