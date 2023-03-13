@@ -4,15 +4,10 @@ import { faTrash, } from "@fortawesome/free-solid-svg-icons";
 
 
 const DeleteIcon = ({ clickAction, size }) => {
-
-  const clickHandler = () => {
-    clickAction();
-  }
-
   size = size ? size : "large";
 
   return (
-    <FontAwesomeIcon style={{ "--size": size }} onClick={clickHandler} id={css.deleteIcon} icon={faTrash} />
+    <FontAwesomeIcon style={{ "--size": size }} onClick={clickAction} id={css.deleteIcon} icon={faTrash} />
   );
 };
 

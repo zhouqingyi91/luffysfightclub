@@ -69,7 +69,7 @@ const delAlbum = async (req, res) => {
   const { albumName } = req.body;
   try {
     const data = await s3Client.send(
-      new ListObjectsV2Command({ Prefix: albumName, Bucket: albumBucketName })
+      new ListObjectsV2Command({ Prefix: albumName + "/", Bucket: albumBucketName })
     );
     const { Deleted } = await s3Client.send(
       new DeleteObjectsCommand({

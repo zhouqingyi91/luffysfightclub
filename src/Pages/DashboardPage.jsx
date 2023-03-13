@@ -26,7 +26,6 @@ const DashboardPage = () => {
   const uploadFiles = useUploadFiles();
   const { promiseInProgress } = usePromiseTracker();
   const logout = useLogout();
-  // const [loading, load, unload] = useLoading();
 
   const album = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
@@ -53,8 +52,8 @@ const DashboardPage = () => {
 
   const uploadHandler = async (files) => {
     try {
-      const result = await trackPromise(uploadFiles(files, album));
-      const { data } = await API.get(DashboardApi, albumPhotosPath, { queryStringParameters: { album } });
+      await trackPromise(uploadFiles(files, album));
+      const { data } = await trackPromise(API.get(DashboardApi, albumPhotosPath, { queryStringParameters: { album } }));
       dispatch(setAlbumPhotos(data));
     } catch (err) {
       console.error(err.message)

@@ -44,3 +44,6 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+#custom files
+amplify/backend/function/dashboardFunction/src/config/allowedOrigins.js

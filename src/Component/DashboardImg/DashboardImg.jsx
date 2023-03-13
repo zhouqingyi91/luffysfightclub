@@ -1,5 +1,5 @@
 import RectImg from '../Responsive/RectImg';
-import DeleteIcon from '../DeleteIcon/DeleteIcon';
+import DeleteIcon from '../UI/DeleteIcon/DeleteIcon';
 import css from "./DashboardImg.module.css";
 import { useState } from 'react';
 import Modal from '../UI/Modal/Modal';
@@ -7,6 +7,7 @@ import { API } from "aws-amplify";
 import DashboardApi, { deleteObjectPath } from '../../Api/DashboardApi';
 import { useDispatch } from 'react-redux';
 import { removeAlbumPhoto } from '../../Store/Authenticated/albumPhotosSlice';
+import { trackPromise } from 'react-promise-tracker';
 
 const DashboardImg = ({ imgUrl, imgName, imgIdx }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -14,7 +15,7 @@ const DashboardImg = ({ imgUrl, imgName, imgIdx }) => {
 
   const deleteS3Object = async () => {
     try {
-      await API.del(DashboardApi, deleteObjectPath, { body: { imgName } })
+      await trackPromise(API.del(DashboardApi, deleteObjectPath, { body: { imgName } }));
       dispatch(removeAlbumPhoto(imgIdx));
     } catch (error) {
       console.error(error.message)

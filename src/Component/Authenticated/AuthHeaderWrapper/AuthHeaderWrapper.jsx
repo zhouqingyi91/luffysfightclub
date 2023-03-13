@@ -7,11 +7,11 @@ import DashboardApi, { albumPhotosPath, addAlbumPath, delAlbumPath } from "../..
 import { setAlbumPhotos } from "../../../Store/Authenticated/albumPhotosSlice";
 import { trackPromise } from 'react-promise-tracker';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
 import { addAlbum, removeAlbum } from "../../../Store/Authenticated/albumsSlice";
-import DeleteIcon from "../../DeleteIcon/DeleteIcon";
+import DeleteIcon from "../../UI/DeleteIcon/DeleteIcon";
 import Modal from "../../UI/Modal/Modal";
 
 let promise = null;
@@ -27,7 +27,7 @@ const AuthHeaderWrapper = () => {
   const [createAlbumFlag, setCreateAlbumFlag] = useState(false);
   const albumNameRef = useRef();
   const [albumName, setAlbumName] = useState("");
-  const [activeDelIconAlbum, setActiveDelAlbum] = useState('');
+  const [activeDeleteIconAlbum, setActiveDeleteIconAlbum] = useState('');
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const AuthHeaderWrapper = () => {
       API.cancel(promise, "cancel previous call");
       promise = API.get(DashboardApi, albumPhotosPath, { queryStringParameters: { album } });
       const { data } = await trackPromise(promise);
-      setActiveDelAlbum(album);
+      setActiveDeleteIconAlbum(album);
       dispatch(setAlbumPhotos(data));
     } catch (err) {
       console.error(err.message);
@@ -74,7 +74,7 @@ const AuthHeaderWrapper = () => {
       dispatch(removeAlbum(index));
       setOpenModal(false);
       dispatch(setAlbumPhotos([]));
-      navigate("/api/dashboard", { state: { from: location }, replace: true });
+      navigate("/api/dashboard");
     } catch (err) {
       console.error(err.message);
     }
@@ -92,9 +92,11 @@ const AuthHeaderWrapper = () => {
               </li>
               <li>
                 {createAlbumFlag
-                  ? <div>
+                  ?
+                  <div>
                     <input value={albumName} onChange={e => setAlbumName(e.target.value)} ref={albumNameRef} type="text" />
-                    <FontAwesomeIcon onClick={finishCreateAlbumHandler} className={css.checkIcon} icon={faCheck} />
+                    <FontAwesomeIcon onClick={finishCreateAlbumHandler} className={css.icon} icon={faCheck} />
+                    <FontAwesomeIcon onClick={() => setCreateAlbumFlag(false)} className={css.icon} icon={faXmark} />
                   </div>
                   : <a href="#" onClick={e => createAlbumHandler(e)}>create album</a>
                 }
@@ -107,7 +109,7 @@ const AuthHeaderWrapper = () => {
                       style={linkActiveStyle} to={`/api/dashboard/${album}`} >
                       {album}
                     </NavLink>
-                    {activeDelIconAlbum === album &&
+                    {activeDeleteIconAlbum === album &&
                       <>
                         <DeleteIcon clickAction={() => setOpenModal(true)} size={"small"} />
                         <Modal

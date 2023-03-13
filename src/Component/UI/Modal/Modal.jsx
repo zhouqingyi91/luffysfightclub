@@ -10,9 +10,12 @@ const Modal = ({ openModal, text, imgUrl, onConfirm, onCancel }) => {
         <div className={css.text}>
           <p>{text}</p>
         </div>
-        <div className={css.img}>
-          {imgUrl && <img src={imgUrl} alt="luffysfightclub" />}
-        </div>
+        {
+          imgUrl &&
+          <div className={css.img}>
+            <img src={imgUrl} alt="luffysfightclub" />
+          </div>
+        }
         <div className={css.buttons}>
           <button onClick={onConfirm}>YES</button>
           <button onClick={onCancel}>NO</button>

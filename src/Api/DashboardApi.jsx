@@ -1,5 +1,3 @@
-import React from 'react';
-
 const DashboardApi = "dashboardApi";
 const loginPath = "/api/login";
 const logoutPath = "/api/logout";

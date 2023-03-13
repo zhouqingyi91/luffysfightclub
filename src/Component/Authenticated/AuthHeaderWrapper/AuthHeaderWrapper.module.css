@@ -18,12 +18,13 @@
   font-size: 16px;
 } */
 
-#header .checkIcon {
+#header .icon {
   vertical-align: middle;
   font-size: 20px;
+  margin: 3px;
 }
 
-#header .checkIcon:hover {
+#header .icon:hover {
   color: white;
 }
 

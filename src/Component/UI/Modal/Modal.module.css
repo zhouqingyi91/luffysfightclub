@@ -4,18 +4,13 @@
   width: 600px;
   height: 520px;
   border: 1px white solid;
-  /* position: fixed;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  transform: translate(-50%, -50%);
   padding: 10px;
   background-color: #1a1a1a;
+  justify-content: space-between;
 }
 
 .text {
@@ -41,7 +36,7 @@
 .buttons {
   display: flex;
   justify-content: flex-end;
-  flex: auto;
+  height: 30px;
 }
 
 .buttons button {

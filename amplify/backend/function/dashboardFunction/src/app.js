@@ -22,7 +22,6 @@ const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-const credentials = require('./middleware/credentials');
 const cookieParser = require('cookie-parser');
 const verifyJWT = require('./middleware/verifyJWT');
 
@@ -30,7 +29,7 @@ if (!process.env.ENV) {
   require('dotenv').config();
 }
 
-// handle options credentials check
+// handle options credentials check, incorporated in corsOptions
 // app.use(credentials);
 
 // cors
