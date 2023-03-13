@@ -10,18 +10,5 @@
       ]
     }
   },
-  "environmentVariableList": [
-    {
-      "cloudFormationParameterName": "accessTokenSecret",
-      "environmentVariableName": "ACCESS_TOKEN_SECRET"
-    },
-    {
-      "cloudFormationParameterName": "refreshTokenSecret",
-      "environmentVariableName": "REFRESH_TOKEN_SECRET"
-    },
-    {
-      "cloudFormationParameterName": "identityPoolId",
-      "environmentVariableName": "IDENTITY_POOL_ID"
-    }
-  ]
+  "environmentVariableList": []
 }

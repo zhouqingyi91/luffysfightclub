@@ -54,31 +54,7 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_dashboardFunction_accessTokenSecret": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "dashboardFunction"
-        }
-      ]
-    },
     "AMPLIFY_function_dashboardFunction_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "dashboardFunction"
-        }
-      ]
-    },
-    "AMPLIFY_function_dashboardFunction_identityPoolId": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "dashboardFunction"
-        }
-      ]
-    },
-    "AMPLIFY_function_dashboardFunction_refreshTokenSecret": {
       "usedBy": [
         {
           "category": "function",

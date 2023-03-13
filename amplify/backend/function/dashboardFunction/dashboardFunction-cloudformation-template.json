@@ -27,15 +27,6 @@
     "storageUserTableStreamArn": {
       "Type": "String",
       "Default": "storageUserTableStreamArn"
-    },
-    "accessTokenSecret": {
-      "Type": "String"
-    },
-    "refreshTokenSecret": {
-      "Type": "String"
-    },
-    "identityPoolId": {
-      "Type": "String"
     }
   },
   "Conditions": {
@@ -99,15 +90,6 @@
             },
             "STORAGE_USERTABLE_STREAMARN": {
               "Ref": "storageUserTableStreamArn"
-            },
-            "ACCESS_TOKEN_SECRET": {
-              "Ref": "accessTokenSecret"
-            },
-            "REFRESH_TOKEN_SECRET": {
-              "Ref": "refreshTokenSecret"
-            },
-            "IDENTITY_POOL_ID": {
-              "Ref": "identityPoolId"
             }
           }
         },
